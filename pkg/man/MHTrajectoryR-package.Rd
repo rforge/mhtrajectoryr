@@ -2,41 +2,42 @@
 \alias{MHTrajectoryR-package}
 \alias{MHTrajectoryR}
 \docType{package}
-\title{
-What the package does (short line)
-~~ package title ~~
+\title{Bayesian model selection in logistic regression for the detection
+of adverse drug reactions
 }
 \description{
-More about what it does (maybe more than one line)
-~~ A concise (1-5 lines) description of the package ~~
+Spontaneous adverse event reports have a high potential for detecting adverse drug reactions.
+However, due to their dimension, the analysis of such databases requires statistical methods.
+The MHTrajectoryR package propose to use a logistic regression whose sparsity is viewed as a model selection
+challenge. Since the model space is huge, a Metropolis-Hastings algorithm carries out the model selection
+by maximizing the BIC criterion.
 }
 \details{
 \tabular{ll}{
 Package: \tab MHTrajectoryR\cr
 Type: \tab Package\cr
 Version: \tab 1.0\cr
-Date: \tab 2015-03-03\cr
-License: \tab What license is it under?\cr
+Date: \tab 2016-02-07\cr
+License: \tab GPL (>= 2)\cr
 }
-~~ An overview of how to use the package, including the most ~~
-~~ important functions ~~
+The main function is Analyze_oneAE.
 }
 \author{
-Who wrote it
-
-Maintainer: Who to complain to <yourfault@somewhere.net>
-~~ The author and/or maintainer of the package ~~
+Matthieu Marbac and Mohammed Sedki
+Maintainer: Mohammed Sedki <mohammed.sedki@u-psud.fr>
 }
 \references{
-~~ Literature or other references for background information ~~
+Matthieu Marbac, Pascale Tubert-Bitter, Mohammed Sedki: 
+Bayesian model selection in logistic regression for the detection
+of adverse drug reactions. (http://arxiv.org/abs/1505.03366) (accepted for publication
+in Biometrical Journal).
 }
-~~ Optionally other standard keywords, one per line, from file ~~
-~~ KEYWORDS in the R documentation directory ~~
-\keyword{ package }
-\seealso{
-~~ Optional links to other man pages, e.g. ~~
-~~ \code{\link[<pkg>:<pkg>-package]{<pkg>}} ~~
-}
-\examples{
-~~ simple examples of the most important functions ~~
-}
+\keyword{Binary data, logistic regression, Metropolis-Hastings algorithm, Bayesian Information Crite-
+rion, model selection,spontaneous reporting}
+%\seealso{
+%~~ Optional links to other man pages, e.g. ~~
+%~~ \code{\link[<pkg>:<pkg>-package]{<pkg>}} ~~
+%}
+%\examples{
+%~~ simple examples of the most important functions ~~
+%}
