@@ -1,0 +1,6 @@
+Analyze_oneAE           Signal detection using via variable selection
+                        in logistic regression. The Bayesian
+                        Information Criterion maximization is assessed
+                        using Metropolis-Hastings algorithm.
+MHTrajectoryR-package   Bayesian model selection in logistic regression
+                        for the detection of adverse drug reactions

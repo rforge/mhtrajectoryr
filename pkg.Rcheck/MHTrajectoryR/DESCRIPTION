@@ -1,6 +1,7 @@
 Package: MHTrajectoryR
 Type: Package
-Title: Bayesian model selection in logistic regression for the detection of adverse drug reactions
+Title: Bayesian model selection in logistic regression for the
+        detection of adverse drug reactions
 Version: 1.0
 Date: 2016-02-10
 Author: Matthieu Marbac and Mohammed Sedki
@@ -10,3 +11,4 @@ License: GPL (>=2)
 Imports: parallel, mgcv
 Depends: R (>= 2.10)
 Repository: R-Forge
+Built: R 3.2.3; ; 2016-02-10 15:43:12 UTC; unix
