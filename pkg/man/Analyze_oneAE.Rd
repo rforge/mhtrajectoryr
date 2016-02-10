@@ -39,9 +39,6 @@ The parameter that define the neighbordhood.
 The number of random initialisations.
 }
 }
-%\details{
-%%  ~~ If necessary, more details than the description above ~~
-%}
 \value{ list of  (best) the best model that maximize the BIC.  (all) all explored models through the trajectory.
 (signals) the detected signals. 
 }
@@ -54,17 +51,10 @@ in Biometrical Journal).
 \author{
 Mohammed Sedki and Matthieu Marbac
 }
-%\note{
-%%  ~~further notes~~
-%}
-
-%% ~Make other sections like Warning with \section{Warning }{....} ~
-
 \seealso{
 \code{\link{FindSignals}}
 }
-%\examples{
-%}
+
 \keyword{Binary data}
 \keyword{Logistic regression} 
 \keyword{Metropolis-Hastings algorithm} 
