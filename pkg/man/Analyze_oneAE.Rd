@@ -40,7 +40,7 @@ The number of random initialisations.
 }
 }
 \value{ list of  (best) the best model that maximize the BIC.  (all) all explored models through the trajectory.
-(signals) the detected signals. 
+(signals) the detected signals (positive, negative or unknown) in OMOP reference set. 
 }
 \references{
 Matthieu Marbac, Pascale Tubert-Bitter, Mohammed Sedki: 
@@ -50,9 +50,6 @@ in Biometrical Journal).
 }
 \author{
 Mohammed Sedki and Matthieu Marbac
-}
-\seealso{
-\code{\link{FindSignals}}
 }
 
 \keyword{Binary data}

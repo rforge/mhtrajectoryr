@@ -23,10 +23,10 @@ ExhaustiveLogisticw <- function(y,
       ind <- attr(datau,"index")
       tmp <- cumsum(w[order(ind,decreasing = F)])[cumsum(table(ind))]
       tmp <- tmp - c(0,tmp[-length(tmp)])      
-      current.fit <- glm(datau[,1]~datau[,-1], family = binomial, weight=tmp)
+      current.fit <- glm(datau[,1]~datau[,-1], family = binomial, weights=tmp)
       
     }else{
-      current.fit <- glm(y~1., family = binomial, weight=w)
+      current.fit <- glm(y~1., family = binomial, weights=w)
     }
     allbic[k] <-  -current.fit$aic + 2*length(current.fit$coef) - log(n)*length(current.fit$coef)
   }
@@ -39,10 +39,10 @@ ExhaustiveLogisticw <- function(y,
     ind <- attr(datau,"index")
     tmp <- cumsum(w[order(ind,decreasing = F)])[cumsum(table(ind))]
     tmp <- tmp - c(0,tmp[-length(tmp)])      
-    best.fit <- glm(datau[,1]~datau[,-1], family = binomial, weight=tmp)
+    best.fit <- glm(datau[,1]~datau[,-1], family = binomial, weights=tmp)
     
   }else{
-    best.fit <- glm(y~1., family = binomial, weight=w)
+    best.fit <- glm(y~1., family = binomial, weights=w)
   }
   
   output <- list(all.bic = allbic,

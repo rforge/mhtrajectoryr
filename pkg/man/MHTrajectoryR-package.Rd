@@ -2,15 +2,14 @@
 \alias{MHTrajectoryR-package}
 \alias{MHTrajectoryR}
 \docType{package}
-\title{Bayesian model selection in logistic regression for the detection
-of adverse drug reactions
+\title{Detection of adverse drug events by analyzing Metropolis-Hastings Markov chain trajectory.
 }
 \description{
 Spontaneous adverse event reports have a high potential for detecting adverse drug reactions.
 However, due to their dimension, the analysis of such databases requires statistical methods.
 The MHTrajectoryR package propose to use a logistic regression whose sparsity is viewed as a model selection
 challenge. Since the model space is huge, a Metropolis-Hastings algorithm carries out the model selection
-by maximizing the BIC criterion.
+by maximizing the BIC criterion through Markov chain trajectory.
 }
 \details{
 \tabular{ll}{

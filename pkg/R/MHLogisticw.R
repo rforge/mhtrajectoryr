@@ -27,14 +27,14 @@ MHLogisticw <- function(y,
   
   
   if(sum(current.model)==0)
-    current.fit <- glm(y~1., family = binomial, weight=w)
+    current.fit <- glm(y~1., family = binomial, weights=w)
   else{
     datau <- uniquecombs(cbind(y,x[,which(current.model==1)]))
     ind <- attr(datau,"index")
     tmp <- cumsum(w[order(ind,decreasing = F)])[cumsum(table(ind))]
     tmp <- tmp - c(0,tmp[-length(tmp)])
     
-    current.fit <- glm(datau[,1]~datau[,-1], family = binomial, weight=tmp)
+    current.fit <- glm(datau[,1]~datau[,-1], family = binomial, weights=tmp)
   }
   current.model.bic <-  -current.fit$aic + 2*length(current.fit$coef) - log(n)*length(current.fit$coef)
   
@@ -56,14 +56,14 @@ MHLogisticw <- function(y,
     #compute candidate.model.bic using the same scheme like the first one
     if(sum(candidate.model)==0){
       fla <- "y~1." 
-      candidate.fit <- glm(y~1., family = binomial, weight=w)
+      candidate.fit <- glm(y~1., family = binomial, weights=w)
     }else{
       datau <- uniquecombs(cbind(y,x[,which(candidate.model==1)]))
       ind <- attr(datau,"index")
       tmp <- cumsum(w[order(ind,decreasing = F)])[cumsum(table(ind))]
       tmp <- tmp - c(0,tmp[-length(tmp)])
       
-      candidate.fit <- glm(datau[,1]~datau[,-1], family = binomial, weight=tmp)
+      candidate.fit <- glm(datau[,1]~datau[,-1], family = binomial, weights=tmp)
     }
     
     candidate.model.bic <-  -candidate.fit$aic + 2*length(candidate.fit$coef) - log(n)*length(candidate.fit$coef)
