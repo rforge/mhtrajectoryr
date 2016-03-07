@@ -37,6 +37,13 @@ rion, model selection,spontaneous reporting}
 %~~ Optional links to other man pages, e.g. ~~
 %~~ \code{\link[<pkg>:<pkg>-package]{<pkg>}} ~~
 %}
-%\examples{
-%~~ simple examples of the most important functions ~~
-%}
+\examples{
+\dontrun{
+  data(exampleAE)
+  data(exampleDrugs)
+  res <- Analyze_oneAE(exampleAE[,1], exampleDrugs, 10, 1, 10)
+  # print signals (drugs relied to the adverse event)
+  print(res$signal)
+}
+}
+

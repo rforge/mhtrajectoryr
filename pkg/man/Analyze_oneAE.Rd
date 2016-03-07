@@ -52,6 +52,16 @@ in Biometrical Journal).
 Mohammed Sedki and Matthieu Marbac
 }
 
+\examples{
+\dontrun{
+  data(exampleAE)
+  data(exampleDrugs)
+  res <- Analyze_oneAE(exampleAE[,1], exampleDrugs, 10, 1, 10)
+  # print signals (drugs relied to the adverse event)
+  print(res$signal)
+}
+}
+
 \keyword{Binary data}
 \keyword{Logistic regression} 
 \keyword{Metropolis-Hastings algorithm} 
