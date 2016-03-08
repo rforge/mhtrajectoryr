@@ -19,7 +19,19 @@ Analyze_oneAE <- function(ae,
       nb.cpus <- min(detectCores(all.tests = FALSE, logical = FALSE) , nbinit)
       if(Sys.info()["sysname"] == "Windows")
       {
-        stop("Parallelisation is not available for windows")
+        cl <- makeCluster(nb.cpus)
+        common.objects <- c("y","x","w", "drugs.names", "alpha") 
+        clusterExport(cl=cl, varlist = common.objects, envir = environment())
+        results <- parLapply(cl = cl,
+                             X = maxitlist,
+                             fun = MHLogisticw,
+                             y = y,
+                             x = x,
+                             w = w,
+                             drugs.names = drugs.names,
+                             alpha = alpha)
+        
+        #stop("Parallelisation is not available for windows")
       }
       else
       {
