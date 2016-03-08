@@ -2,3 +2,4 @@
 export(Analyze_oneAE)
 importFrom("mgcv", uniquecombs)
 importFrom("parallel", mclapply, detectCores, makeCluster, clusterExport, parLapply, stopCluster)
+importFrom("stats", binomial, glm, rbinom, runif)

@@ -1,15 +1,21 @@
-* using log directory ‘/home/sedki/recherche/codes/mhtrajectoryr/pkg.Rcheck’
-* using R version 3.0.2 (2013-09-25)
+* using log directory ‘/home/sedki/Programmation/Rprojects/mhtrajectoryr/pkg.Rcheck’
+* using R version 3.2.3 (2015-12-10)
 * using platform: x86_64-pc-linux-gnu (64-bit)
 * using session charset: UTF-8
+* using option ‘--as-cran’
 * checking for file ‘pkg/DESCRIPTION’ ... OK
 * checking extension type ... Package
 * this is package ‘MHTrajectoryR’ version ‘1.0’
 * checking CRAN incoming feasibility ... NOTE
 Maintainer: ‘Mohammed Sedki <Mohammed.sedki@u-psud.fr>’
 New submission
+
+The Title field should be in title case, current version then in title case:
+‘Bayesian model selection in logistic regression for the detection of adverse drug reactions’
+‘Bayesian Model Selection in Logistic Regression for the Detection of Adverse Drug Reactions’
 * checking package namespace information ... OK
-* checking package dependencies ... OK
+* checking package dependencies ... NOTE
+  No repository set, so cyclic dependency check skipped
 * checking if this is a source package ... OK
 * checking if there is a namespace ... OK
 * checking for executable files ... OK
@@ -32,6 +38,7 @@ New submission
 * checking whether the namespace can be loaded with stated dependencies ... OK
 * checking whether the namespace can be unloaded cleanly ... OK
 * checking loading without being on the library search path ... OK
+* checking use of S3 registration ... OK
 * checking dependencies in R code ... OK
 * checking S3 generic/method consistency ... OK
 * checking replacement functions ... OK
@@ -51,4 +58,5 @@ New submission
 * checking data for ASCII and uncompressed saves ... OK
 * checking examples ... OK
 * checking PDF version of manual ... OK
-NOTE: There was 1 note.
+* DONE
+Status: 2 NOTEs

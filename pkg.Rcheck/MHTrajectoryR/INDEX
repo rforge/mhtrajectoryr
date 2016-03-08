@@ -5,3 +5,5 @@ Analyze_oneAE           Signal detection using via variable selection
 MHTrajectoryR-package   Detection of adverse drug events by analyzing
                         Metropolis-Hastings Markov chain trajectory.
 OmopReference           The OMOP reference set
+exampleAE               A simulated data
+exampleDrugs            A simulated data
