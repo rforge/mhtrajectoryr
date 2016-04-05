@@ -1,5 +1,5 @@
 MHLogisticw <- function(y,
-                        x,
+                        xx,
                         w,
                         drugs.names,
                         maxit,
@@ -8,7 +8,7 @@ MHLogisticw <- function(y,
 {
   t0 <- proc.time()
   n <- sum(w)
-  p <- ncol(x) 
+  p <- ncol(xx) 
   
   allbic <- rep(0, maxit)
   
@@ -29,7 +29,7 @@ MHLogisticw <- function(y,
   if(sum(current.model)==0)
     current.fit <- glm(y~1., family = binomial, weights=w)
   else{
-    datau <- uniquecombs(cbind(y,x[,which(current.model==1)]))
+    datau <- uniquecombs(cbind(y,xx[,which(current.model==1)]))
     ind <- attr(datau,"index")
     tmp <- cumsum(w[order(ind,decreasing = F)])[cumsum(table(ind))]
     tmp <- tmp - c(0,tmp[-length(tmp)])
@@ -44,7 +44,7 @@ MHLogisticw <- function(y,
   best.fit <- current.fit
   
   allbic[iter] <- current.model.bic
-  m.best <- nrow(x)
+  m.best <- nrow(xx)
   
   while(iter < maxit)
   {
@@ -58,7 +58,7 @@ MHLogisticw <- function(y,
       fla <- "y~1." 
       candidate.fit <- glm(y~1., family = binomial, weights=w)
     }else{
-      datau <- uniquecombs(cbind(y,x[,which(candidate.model==1)]))
+      datau <- uniquecombs(cbind(y,xx[,which(candidate.model==1)]))
       ind <- attr(datau,"index")
       tmp <- cumsum(w[order(ind,decreasing = F)])[cumsum(table(ind))]
       tmp <- tmp - c(0,tmp[-length(tmp)])
