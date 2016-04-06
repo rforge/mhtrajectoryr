@@ -1,5 +1,5 @@
 FindSignals <- function(results){
-  output <- data.frame(ATC=as.character(results$best$drugs.names[ which(results$best$best.model == 1) ]),
+  output <- data.frame(ATC=as.character(results$best$drugs.names[which(results$best$best.model==1)]),
                        beta=results$best$best.fit.coef[-1], 
                        stringsAsFactors = F, 
                        row.names = NULL)

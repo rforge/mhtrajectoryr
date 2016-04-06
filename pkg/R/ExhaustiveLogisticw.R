@@ -1,25 +1,22 @@
-
 ExhaustiveLogisticw <- function(y,
-                                x,
+                                xx,
                                 w,
                                 drugs.names)
 {
   t0 <- proc.time()
   n <- sum(w)
-  p <- ncol(x) 
+  p <- ncol(xx) 
   
   allmodel <- matrix(c(0,1), 2, 1)
-  if (ncol(x)>1){
-    for (j in 2:ncol(x)){
+  if (ncol(xx)>1){
+    for (j in 2:ncol(xx)){
       allmodel <- rbind(cbind(rep(0, nrow(allmodel)), allmodel),cbind(rep(1, nrow(allmodel)), allmodel))
     }
   }
   allbic <- rep(0, nrow(allmodel))
-  
   for (k in 1:nrow(allmodel)){
     if (sum(allmodel[k,])>0){
-      
-      datau <- uniquecombs(cbind(y,x[,which(allmodel[k,]==1)]))
+      datau <- uniquecombs(cbind(y,xx[,which(allmodel[k,]==1)]))
       ind <- attr(datau,"index")
       tmp <- cumsum(w[order(ind,decreasing = F)])[cumsum(table(ind))]
       tmp <- tmp - c(0,tmp[-length(tmp)])      
@@ -32,10 +29,10 @@ ExhaustiveLogisticw <- function(y,
   }
   
   best.model <- allmodel[which(allbic==max(allbic))[1],]
-  m.best <- nrow(uniquecombs(cbind(y,x[,which(best.model==1)])))
+  m.best <- nrow(uniquecombs(cbind(y,xx[,which(best.model==1)])))
   
   if (sum(best.model)>0){
-    datau <- uniquecombs(cbind(y,x[,which(best.model==1)]))
+    datau <- uniquecombs(cbind(y,xx[,which(best.model==1)]))
     ind <- attr(datau,"index")
     tmp <- cumsum(w[order(ind,decreasing = F)])[cumsum(table(ind))]
     tmp <- tmp - c(0,tmp[-length(tmp)])      

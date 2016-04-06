@@ -5,12 +5,14 @@ Analyze_oneAE <- function(ae,
                           nbinit)
 {
   if (sum(ae)>1){
-    datau <- uniquecombs(cbind(ae,drug[,-which(colSums(drug[which(ae==1),])==0)]))
+    
+    #datau <- uniquecombs(cbind(ae,drug[,-as.numeric(which(colSums(drug[which(ae==1),])==0))]))
+    datau <- uniquecombs(cbind(ae,drug[,!(colSums(drug[which(ae==1),])==0)]))
     w <- table(attr(datau,"index"))
     xx <- datau[,-1]
     y <- datau[,1]
     
-    drugs.names <- colnames(drug[,-which(colSums(drug[which(ae==1),])==0)])
+    drugs.names <- colnames(drug[,!(colSums(drug[which(ae==1),])==0)])
     
     if (ncol(datau) > 12){
       cat("Metropolis-Hastings is used since many drugs are considered\n")
@@ -54,7 +56,7 @@ Analyze_oneAE <- function(ae,
       results$signals <- FindSignals(results)
     }else{
       cat("Exhaustive approach is used since few drugs are considered\n")
-      results <- list(best=ExhaustiveLogisticw(y = y, x = as.matrix(xx), w=w, drugs.names = drugs.names))
+      results <- list(best=ExhaustiveLogisticw(y = y, xx = as.matrix(xx), w=w, drugs.names = drugs.names))
       results$signals <- FindSignals(results)
     }
   }else{
